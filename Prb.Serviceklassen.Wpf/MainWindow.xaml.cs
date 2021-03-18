@@ -80,7 +80,7 @@ namespace Prb.Serviceklassen.Wpf
             lblTotalStockValueEuro.Content = productService.StockValueEuro.ToString("€#,##0.00");
             lblTotalStockValueDollar.Content = productService.StockValueDollar.ToString("€#,##0.00");
         }
-        private void lstProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void LstProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ClearControls();
             if(lstProducts.SelectedItem != null)
@@ -99,8 +99,7 @@ namespace Prb.Serviceklassen.Wpf
             lblStockValueDollar.Content = product.StockValueDollar.ToString("€#,##0.00");
             cmbPackingUnits.SelectedItem = product.Packing;
         }
-
-        private void btnNew_Click(object sender, RoutedEventArgs e)
+        private void BtnNew_Click(object sender, RoutedEventArgs e)
         {
             NewEditSituation();
             isNew = true;
@@ -110,8 +109,7 @@ namespace Prb.Serviceklassen.Wpf
             cmbPackingUnits.SelectedIndex = 0;
             txtCode.Focus();
         }
-
-        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
             if(lstProducts.SelectedItem != null)
             {
@@ -122,8 +120,7 @@ namespace Prb.Serviceklassen.Wpf
                 txtCode.Focus();
             }
         }
-
-        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
             if (lstProducts.SelectedItem != null)
             {
@@ -136,8 +133,7 @@ namespace Prb.Serviceklassen.Wpf
                 }
             }
         }
-
-        private void btnSave_Click(object sender, RoutedEventArgs e)
+        private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
             string code = txtCode.Text;
             string description = txtDescription.Text;
@@ -162,14 +158,13 @@ namespace Prb.Serviceklassen.Wpf
             PopulateListbox();
             DefaultSituation();
             lstProducts.SelectedItem = product;
-            lstProducts_SelectionChanged(null, null);
+            LstProducts_SelectionChanged(null, null);
             DisplayStats();
         }
-
-        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        private void BtnCancel_Click(object sender, RoutedEventArgs e)
         {
             DefaultSituation();
-            lstProducts_SelectionChanged(null, null);
+            LstProducts_SelectionChanged(null, null);
 
         }
     }
